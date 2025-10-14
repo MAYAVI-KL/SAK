@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S ATHUL KRISHNA - Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #2c3e50;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000000;
+        }
+        
+        .nav-links {
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #000000;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #fff;
+            color: #3498db;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .skill-card i {
+            font-size: 40px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        
+        /* Hobbies Section */
+        .hobbies-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .hobby-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .hobby-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .hobby-image {
+            height: 200px;
+            background-color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hobby-info {
+            padding: 20px;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item i {
+            font-size: 20px;
+            color: #3498db;
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #3498db;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">SAK</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" style="display: none;">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm S Athul Krishna</h1>
+                <p>A passionate Computer Science student with a love for technology, gaming, and music</p>
+                <a href="#contact" class="btn">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Learn more about who I am and what I do</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Hello! I'm a Student</h3>
+                    <p>My name is SAK, a student of Grade 12 Computer Science at Model Technical School. My academic focus is on understanding the fundamentals of programming, software development, and computational logic. Beyond the realm of code, I have a strong creative side that I nurture through my hobbies. I am an avid listener of music, which helps me concentrate, and a passionate gamer, which sharpens my problem-solving skills and strategic thinking. I also practice playing the violin, which instills in me a sense of discipline and patience. I believe this blend of technical knowledge and artistic pursuits helps me approach challenges with a unique and balanced perspective.</p>
+                    <a href="#" class="btn" style="margin-top: 20px;">Download Resume</a>
+                </div>
+                <div class="about-image">
+                    <div style="width: 100%; height: 400px; background-color: #3498db; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">
+                    <img src="file:///C:/Users/hp/Downloads/sak.jpg.jpg" alt="S Athul Krishna" style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Skills</h2>
+                <p>Here are some of the skills I work with</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Food Enthusiast</h3>
+                    <p>Enjoy exploring different cuisines, especially spicy dishes, sweets, and desserts</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Gaming</h3>
+                    <p>Experienced in competitive games like PUBG, Valorant, and Marvel Rivals</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-bed"></i>
+                    <h3>Sleeping</h3>
+                    <p>Mastered the art of efficient rest and recovery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="hobbies">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Hobbies</h2>
+                <p>Check out some of my favorite activities</p>
+            </div>
+            <div class="hobbies-container">
+                <div class="hobby-card">
+                    <div class="hobby-image" style="background-color: #2ecc71;">
+                        <i class="fas fa-headphones" style="font-size: 60px;"></i>
+                    </div>
+                    <div class="hobby-info">
+                        <h3>Music Listening</h3>
+                        <p>I enjoy a wide variety of music genres that help me focus and relax.</p>
+                        <a href="https://open.spotify.com/user/31nb6dzncobgrbmckwn5qntd6k7y" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Explore Spotify</a>
+                    </div>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-image" style="background-color: #e74c3c;">
+                        <i class="fas fa-gamepad" style="font-size: 60px;"></i>
+                    </div>
+                    <div class="hobby-info">
+                        <h3>Gaming</h3>
+                        <p>Competitive gaming helps sharpen my strategic thinking and problem-solving skills.</p>
+                        <a href="https://playvalorant.com" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Play Valorant</a>
+                    </div>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-image" style="background-color: #9b59b6;">
+                        <i class="fas fa-music" style="font-size: 60px;"></i>
+                    </div>
+                    <div class="hobby-info">
+                        <h3>Violin Playing</h3>
+                        <p>Practicing the violin teaches me discipline, patience, and the beauty of musical expression.</p>
+                     <a href="https://virtualpiano.net/virtual-violin/" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Play Violin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+                <p>Get in touch with me for collaborations or inquiries</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Talk</h3>
+                    <p>Feel free to reach out to me for any questions or opportunities.</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>athulkrishnas.viia@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9400280130</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Ernakulam, Kerala, India</span>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required id="name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required id="email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required id="subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required id="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://discord.com/channels/@me" class="discord" target="_blank">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://www.instagram.com/s_athul_krishna/" class="instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://web.whatsapp.com/" class="website" target="_blank">
+            <i class="fab fa-whatsapp"></i> 
+        </a>
+            </div>
+            <p>&copy; 2025 SAK. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll just show a confirmation message
+            alert(`Thank you, ${name}! Your message has been sent. In a real application, this would be processed by a server.`);
+            
+            // Reset the form
+            this.reset();
+        });
+        
+        // Mobile menu toggle (basic implementation)
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+        
+        // Responsive menu handling
+        function handleResize() {
+            if (window.innerWidth <= 768) {
+                navLinks.style.display = 'none';
+                mobileMenuBtn.style.display = 'block';
+            } else {
+                navLinks.style.display = 'flex';
+                mobileMenuBtn.style.display = 'none';
+            }
+        }
+        
+        // Initial call and event listener for window resize
+        handleResize();
+        window.addEventListener('resize', handleResize);
+    </script>
+</body>
+</html>
